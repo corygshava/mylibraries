@@ -157,9 +157,10 @@ function getIt(me,loc) {
 
 // new ops 
 
-// this one removes array elements from a certain index going forwards
 
 function splitfrom(what,startat){
+	// this one removes array elements from a certain index going forwards
+
 	var it = [];
 	for(let x=startat;x<what.length;x++){
 		it.push(what[x]);
