@@ -3,14 +3,8 @@
 	*	Go check out www.shavaarts.com to find out how to use it
 */
 
-//common variables
 
-var lbs = localStorage;
-var sessionSupported = true;
-var sbs = sessionSupported ? sessionStorage : lbs;
-
-//common reusables
-
+// verified functions (not going anywhere)
 function toggleShow(me) {
 	//requires data-shown parameter to be attached to HTML object me
 	var item = document.querySelector(me),def = 0;
@@ -44,19 +38,16 @@ function toggleShowB(me,ifoff,iffon) {
 	}
 }
 
-function toggleShowC(me,rn) {
-	//requires data-shown parameter to be attached to HTML object me
-	var item = rn == 1 ? me : document.querySelector(me);
-	var def = Number(item.dataset.shown);
 
-	if(def == 0){
-		item.style.display = 'block';
-		item.dataset.shown = 1;
-	} else {
-		item.style.display = 'none';
-		item.dataset.shown = 0;
-	}
-}
+//-------------------------------------------------------------------------------------------
+
+//common variables
+
+var lbs = localStorage;
+var sessionSupported = true;
+var sbs = sessionSupported ? sessionStorage : lbs;
+
+//common reusables
 
 function toggleClass(what,class1,class2,rno) {
 	var item = Number(rno) == 1 ? what : document.querySelector(what);
@@ -261,25 +252,22 @@ function toggleClass3(sel,c1,c2) {
 function copyToClipboard(selector) {
     // Get the element by selector
     const element = document.querySelector(selector);
-    
+
     if (element) {
-        // Create a temporary textarea element to hold the text
         const tempTextarea = document.createElement('textarea');
         tempTextarea.value = element.innerText || element.value;
         document.body.appendChild(tempTextarea);
-        
-        // Select the text
+
         tempTextarea.select();
         tempTextarea.setSelectionRange(0, 99999); // For mobile devices
-        
-        // Copy the text to clipboard
+
         try {
             const successful = document.execCommand('copy');
             console.log(successful ? 'Text copied to clipboard' : 'Unable to copy text');
         } catch (err) {
             console.error('Oops, unable to copy', err);
         }
-        // Remove the temporary textarea
+
         document.body.removeChild(tempTextarea);
     } else {
         console.error(`Element not found for selector: ${selector}`);
@@ -289,6 +277,7 @@ function copyToClipboard(selector) {
 // -----added on 9/7/2024 ---------- around 2 days after these ^
 
 function isvalidid(id,list) {
+	// just checks if the id exists in the array
 	return id >= 0 && id < list.length;
 }
 

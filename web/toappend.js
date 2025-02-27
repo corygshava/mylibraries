@@ -46,3 +46,25 @@ function plural(wad,n) {
 
     return res;
 }
+
+function mekRandomString(charcount,useNums = true,useSymbols = false) {
+    let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*()^~`";
+    letters = useSymbols ? letters : letters.substr(0,26);
+
+    let lettersLo = letters.toLowerCase();
+    let nums = "1234578906";
+
+    let options = letters + lettersLo;
+    options += useNums ? nums : '';
+
+    let res = '';
+    let fin = [];
+
+    for(let id = 0;id < charcount;id++){
+        fin.push(options.split('')[Math.floor(Math.random() * options.length)]);
+    };
+
+    res = fin.join("");
+
+    return res;
+}
