@@ -4,7 +4,7 @@
 */
 
 
-// verified functions (not going anywhere)
+// [verified functions (not going anywhere)]------------------------------------------------------
 function toggleShow(me) {
 	//requires data-shown parameter to be attached to HTML object me
 	var item = document.querySelector(me),def = 0;
@@ -39,7 +39,7 @@ function toggleShowB(me,ifoff,iffon) {
 }
 
 
-//-------------------------------------------------------------------------------------------
+// [functions in probation]-----------------------------------------------------------------------
 
 //common variables
 

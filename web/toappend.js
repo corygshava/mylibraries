@@ -1,3 +1,5 @@
+// added from Faith project on 27/02/2025 same day as these
+
 function copytext1(txt) {
     if(txt != "" || txt != undefined){
         let b = document.createElement('textarea');
@@ -18,6 +20,8 @@ function copytext1(txt) {
     }
 }
 
+// added from Maggy project on 27/02/2025 same day as these
+
 function daysUntil(date) {
     let target = new Date(date).setHours(0, 0, 0, 0);
     let today = new Date().setHours(0, 0, 0, 0);
@@ -28,6 +32,8 @@ function daysUntil(date) {
     if (diff === 1) return "tomorrow";
     return `${diff} days remaining`;
 }
+
+// added from Shawn project on 27/02/2025 same day as these
 
 function plural(wad,n) {
     if (n === 1) {
@@ -46,6 +52,8 @@ function plural(wad,n) {
 
     return res;
 }
+
+// added from betnare redesign on 27/02/2025 same day as these
 
 function mekRandomString(charcount,useNums = true,useSymbols = false) {
     let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*()^~`";
@@ -68,3 +76,6 @@ function mekRandomString(charcount,useNums = true,useSymbols = false) {
 
     return res;
 }
+
+// added from diamondeng gig on 27/02/2025 same day as these
+
