@@ -1,6 +1,8 @@
 /*
 	*	Hi there, Cory here, this is a script full of functions to make your work  easier
 	*	Go check out github @corygshava to find out how to use it
+	*	Also pple keep modifying it like alot so ensure you have the latest version from this repo
+	*	https://github.com/corygshava/mylibraries
 */
 
 
@@ -37,7 +39,6 @@ function toggleShowB(me,ifoff,iffon) {
 		item.dataset.shown = 0;
 	}
 }
-
 
 // [functions in probation]-----------------------------------------------------------------------
 
