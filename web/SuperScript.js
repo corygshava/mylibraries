@@ -1,6 +1,6 @@
 /*
 	*	Hi there, Cory here, this is a script full of functions to make your work  easier
-	*	Go check out www.shavaarts.com to find out how to use it
+	*	Go check out github @corygshava to find out how to use it
 */
 
 
