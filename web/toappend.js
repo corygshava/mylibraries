@@ -55,7 +55,11 @@ function plural(wad,n) {
 
 // added from betnare redesign on 27/02/2025 same day as these ^
 
-function mekRandomString(charcount,useNums = true,useSymbols = false) {
+function mekRandomString(charcount,useNums,useSymbols) {
+    // setup defaults
+    useNums = useNums == undefined ? true : useNums;
+    useSymbols = useSymbols == undefined ? false : useSymbols;
+
     let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*()^~`";
     letters = useSymbols ? letters : letters.substr(0,26);
 
@@ -158,15 +162,6 @@ function openWhatsApp(number) {
     window.open(url, '_blank', 'noopener,noreferrer');
 }
 
-function sendWhatsAppMessage(phoneNumber, message) {
-    // Sanitize the phone number and encode the message for URL
-    const sanitizedNumber = phoneNumber.replace(/\D/g, ''); // Remove non-digit characters using regex
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${sanitizedNumber}?text=${encodedMessage}`;
-
-    window.open(whatsappUrl, '_blank');
-}
-
 function hasDatePassed(dateString) {
     const inputDate = new Date(dateString);
     const today = new Date();
@@ -233,3 +228,35 @@ function animateCSSVariable(element, variable, from, to, duration) {
 }
 
 // end of picked
+
+// new from Nima
+
+function toggleScrollable(selector) {
+    let item = document.querySelector(selector);
+    let factor = item.dataset.canscroll == undefined || item.dataset.canscroll == "" ? "yes" : item.dataset.canscroll;
+    let b = factor.toLowerCase() == "yes";
+    let scrollval = b ? "hidden" : "auto";
+    let outval = b ? "no" : "yes";
+
+    item.style.overflowY = scrollval;
+    item.dataset.canscroll = outval;
+}
+
+function sendWhatsAppMessage(phoneNumber, message, newtab,delay) {
+    // setup defaults
+    newtab = newtab == undefined ? false : newtab;
+    delay = delay == undefined ? false : delay;
+
+    // Sanitize the phone number and encode the message for URL
+    const sanitizedNumber = phoneNumber.replace(/\D/g, ''); // Remove non-digit characters using regex
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${sanitizedNumber}?text=${encodedMessage}`;
+
+    setTimeout(el => {
+        if(newtab){
+            window.open(whatsappUrl, '_blank');
+        } else {
+            window.location.assign(whatsappUrl);
+        }
+    },delay);
+}
