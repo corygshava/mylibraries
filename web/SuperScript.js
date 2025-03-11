@@ -345,7 +345,7 @@ function formatTime2(n) {
     return finObj;
 }
 
-// -----added on 2/03/2025 ---------- around 1 day after these ^
+// -----added on 3/02/2025 ---------- around 206 days after these ^
 
 // modified tabswitch
 function tabSwitch(no,series,norm,select) {
@@ -374,3 +374,7 @@ function tabSwitch(no,series,norm,select) {
 
 	items[no].style.display = select;
 }
+
+// -----added on 28/02/2025 ---------- around 231 days after these ^
+
+var debugmode = false;
