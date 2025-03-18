@@ -378,3 +378,23 @@ function tabSwitch(no,series,norm,select) {
 // -----added on 28/02/2025 ---------- around 231 days after these ^
 
 var debugmode = false;
+
+// -----added on 18/03/2025 ---------- around 18 days after these ^
+
+function plural(wad,n) {
+    if (n === 1) {
+        res = wad;
+    } else if (wad.endsWith('us')) {
+        res = wad.slice(0, -2) + 'i';
+    } else if (wad.endsWith('s')) {
+        res = wad + 'es';
+    } else if (wad.endsWith('y')) {
+        res = wad.slice(0,-1) + 'ies';
+    } else if (wad.endsWith('_')){
+        res = wad.substr(0,wad.length - 1);
+    }else {
+        res = wad + 's';
+    }
+
+    return res;
+}
