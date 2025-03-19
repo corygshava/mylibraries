@@ -398,3 +398,38 @@ function plural(wad,n) {
 
     return res;
 }
+
+// -----added on 19/03/2025 ---------- around 1 day after this one ^
+
+function copytext1(txt) {
+	// first used in 'faith project'
+	if(txt != "" || txt != undefined){
+		let b = document.createElement('textarea');
+		b.value = txt;
+		document.body.appendChild(b);
+		
+		b.select()
+		b.setSelectionRange(0,99000);
+
+		try{
+			let suc = document.execCommand('copy');
+			console.log(suc ? "text copied" : "copying error occured!");
+		} catch {
+			alert("there was an error copying your text, please try again");
+		}
+
+		document.body.removeChild(b);
+	}
+}
+
+function daysUntil(date) {
+	// first used in 'maggy project'
+	let target = new Date(date).setHours(0, 0, 0, 0);
+	let today = new Date().setHours(0, 0, 0, 0);
+	let diff = (target - today) / (1000 * 60 * 60 * 24);
+
+	if (diff < 0) return "passed";
+	if (diff === 0) return "today";
+	if (diff === 1) return "tomorrow";
+	return `${diff} days remaining`;
+}
