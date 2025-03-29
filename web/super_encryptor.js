@@ -5,7 +5,7 @@ function genCharsList() {
 	let chars2 = chars.toUpperCase();
 	let nums = "1234567890";
 	let symbols = "!@#$%^&*()-+_{}[]"
-	let float = "§₻⌌⌍⌏⌎₈₅₂₋∃∄₉₆₃₀≐≍≊≇≄≅≖≙≜≟≢≮≯≣⊚⊗⊖⊙⊜⊝⊡⊞⊢"
+	let float = "§₻₈₅₂₋∃∄₉₆₃₀≐≍≊≇≄≅≖≙≜≟≢≮≯≣⊚⊗⊖⊙⊜⊝⊡⊞⊢"
 	let fintxt = `${chars}${chars2}${nums}` + symbols + float;
 
 	return fintxt;
